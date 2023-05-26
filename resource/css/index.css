@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+body { display:flex; justify-content: center; align-items: center; position:fixed; top:0; left:0; width:100vw; height:100vh;}
+.mport { width:100%; height:107vh;  bottom: -3vh; max-width:99.5vw; }
+.loading-hider { 
+  background:rgba(0,0,0,0); width:100vw; height:100vh; position:fixed; top:0; left:0; z-index:1; 
+}
+.hidden{display: none;}
+#MUSIC_BOX{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 7%;
+  left: 50%;
+  z-index: 10;
+}
+.music-controls {
+  display: flex;
+  align-items: center;
+}
+
+.music-button {
+  width: 30px;
+  height: 20px;
+  background-image: url("../images/ping0.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.volume-slider {
+  margin-left: 10px;
+  background-color: #000;
+  width: 10%;
+}
+#PAGE_VIEW { 
+  overflow:hidden; 
+  width:100%; 
+  height:100%; 
+  display:flex; 
+  justify-content: center; 
+  align-items: center; 
+  max-width:100vw; 
+  max-height:100vh;
+}
+
+/* FIRST LOGIN PAGE */
+.control-box {display: none; background:rgba(0,0,0,0.3); width:100vw; height:100vh; position:fixed; top:0; left:0; z-index:200;}
+.login-box{width: 800px; height: 160px; position: fixed; transform: translate(-50%, -50%); top: 50%; left: 50%; z-index: 201; background-color: #0E3B68;}
+
+.effect-color { color:#2469ff!important; }
+#PAGE_VIEW div.header { position: absolute; color: #fcf6f6; top: 10px; left: 0;
+  width: 100%; height: 70px; background-color:transparent; z-index: 15;
+  display: flex; justify-content: center; align-items: center;
+  padding: 0 7rem; 
+}
+#PAGE_VIEW div.header h2 {font-family: 'Single Day', cursive; width: 100%; font-size: 2.5rem; text-align: center;}
+#PAGE_VIEW div.header span {font-family: 'Single Day', cursive;}
+#PAGE_VIEW div.header p {font-size: 1rem;} 
+#SEARCH_BTN, #MENU_BTN {display: none;}
+#PAGE_VIEW div.footer { 
+  position: absolute; width: 100%; height: 30px; bottom:0; right:0; 
+  font-size: 0.8rem; color: #444; background: #fff; 
+  display: flex; justify-content: flex-end; align-items: center; 
+  cursor:pointer; 
+  z-index: 10;
+  pointer-events:none;
+  display:none;
+}
+#PAGE_VIEW div.footer img { height: 1.6rem; margin-right: 1rem; padding-left:1rem; }
+
+#BTN_AREA { 
+  display: flex; flex-direction: column; 
+  position:fixed; bottom:2rem; right:2rem; z-index:10;
+  padding:0 5px 10px;
+  border-radius:10px; }
+
+#BTN_AREA div{display: flex; flex-direction: column;}
+#BTN_AREA button { margin-top:1rem; outline: none; font-size: 1.1rem; border: none; background: rgb(240, 238, 253);
+                  border-radius: 5px; height: 60px; width: 170px; }
+#BTN_AREA div:nth-child(2) button:nth-child(2){display: none;}
+#BTN_AREA div:nth-child(2) button:nth-child(4){display: none;}
+#DATE_PICKER{display: none; outline: none; border: none; text-align: center; border-radius: 5px; height: 60px; width: 170px; background: rgb(240, 238, 253);
+            font-size: 1.1rem; }
+#DATE_SELECT_BTN{background-color: #0fcfed;}
+.data_wrap{ width: 170px; height: 60px; border-radius: 5px; 
+          position: absolute; }
+#BTN_CHANGE_VIEW { background:#fff; }
+
+/* INPUT BOX */
+#INPUT_BOX{
+  position: fixed;
+  display: none;
+  z-index:201;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, 0%);
+  top: auto;
+  background-color: #0E3B68;
+  border-radius: 2px;
+  padding:35px 20px;
+  width: 800px;
+  height: 250px;
+  font-family: "SCoreDream";
+  border-radius: 5px;
+}
+.input_wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 7px;
+
+}
+.input_wrap>div{height: 65px;}
+#EMAIL_INPUT, #PHONE_INPUT, #EMAIL_INPUT_LOGIN, #PHONE_INPUT_LOGIN{
+  border: none;
+  width: 230px;
+  height: 36px;
+  border-radius: 2px;
+  padding: 0 7px;
+  font-size: 1rem;
+  outline: none;
+}
+#CHECK_ALERT{display: none; margin-top: 5px; color: red; font-size: 14px; font-weight: 500; text-align: center;}
+#EMAIL_ALERT{display: none; margin-top: 5px; color: red; font-size: 14px; font-weight: 500; text-align: center;}
+#PHONE_ALERT{display: none; margin-top: 5px; color: red; font-size: 14px; font-weight: 500; text-align: center;}
+#PHONE_ALERT_LOGIN, #EMAIL_ALERT_LOGIN{display: none; margin-top: 5px; color: red; font-size: 14px; font-weight: 500; text-align: center;}
+#INPUT_LOGIN_BTN{position: absolute; transform: translate(-50%, -50%); bottom: 50px; left: 50%; border: none; width: 130px; height: 36px; border-radius: 5px; font-weight: 700; font-size: 1rem; background: #ffffff; color: #020c78; cursor: pointer;}
+#INPUT_BTN{ border: none; width: 100px; height: 36px; border-radius: 5px; font-weight: 700; font-size: 1rem; background: #ffffff; color: #0e0e0e; cursor: pointer;}
+#INPUT_BOX h4{color: #fff; font-size: 21px; font-weight: 400; margin-bottom: 10px; text-align: center;}
+#INPUT_BOX h5{font-weight: 400; margin-top: 30px; font-size: 20px; color: #fefefe; text-align: center;}
+.check-box{color: #fff; display: flex; align-items: center; padding: 0 10px; gap: 8px; cursor: pointer; height: 36px;}
+.check-free{ display: flex; justify-content: center; align-items: center; width: 25px; height: 22px; border-radius: 3px; background: #f3f3f3;}
+.check-sign{width: 20px; height: 20px; display: none;}
+.check-box > p {font-size: 14px;}
+
+/* LOGIN PAGE */
+#LOGIN_PAGE{
+  position: fixed; z-index: 202; transform: translate(-50%, -50%); top: 50%; left: 50%;
+  width: 350px; height: 350px; background: #0E3B68; padding:60px 0 20px 0; border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center;
+}
+#LOGIN_PAGE>div{ height: 80px;  }
+#LOGIN_PAGE article{color: #fff; margin-bottom: 5px; font-size: 14px;}
+#LOGIN_BTN {width: 120px; height: 40px; border: none; cursor: pointer; margin-top: 10px; background: #0fcfed; color: #fff; font-size: 1rem; font-weight: 600; border-radius: 3px;}
+
+#COLOR_SET {
+  appearance: none;
+  width: 2.3rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  min-height:auto;
+  position:absolute;
+  bottom:10px;
+  right:100px;
+  border-radius:0.5rem;
+}
+#COLOR_SET::-webkit-color-swatch {
+  border-radius:0.5rem;
+  border: none;
+}
+#COLOR_SET::-moz-color-swatch {
+  border-radius:0.5rem;
+  border: none;
+}
+#CANVAS { cursor: crosshair; position: absolute; top:0; left:0; z-index:-1; width:100%; height:100%; }
+#PAY_WINDOW{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: #0E3B68;
+  padding:45px 20px;
+  width: 360px;
+  height: 400px;
+}
+#PAY_WINDOW > p {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+#PAY_WINDOW > img { width: 30px; position: fixed; right: 6%; top: 6%; cursor: pointer;}
+#CLOSE_INPUT{width: 35px; position: fixed; right: 6%; top: 6%; cursor: pointer}
+#PAY_WINDOW button {
+  border-color: #0fcfed;
+  background: #0fcfed;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 80%;
+  height: 45px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.sell, .rent {display: none;}
+
+.menu_wrap {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  z-index: 10;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.menu-btn{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+}
+.menu-btn_burger{
+  width: 24px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn_burger::before,
+.menu-btn_burger::after{
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn_burger::before{
+  transform: translateY(-8px);
+}
+.menu-btn_burger::after{
+  transform: translateY(8px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn_burger{
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn_burger::before{
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn_burger::after{
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* MENU CONTENT */
+.menu_content {
+  position: fixed; top: 5rem; right: -100%; z-index: 11;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background-color: rgba(255, 255, 255, .9);
+  height: auto;
+  width: 200px; 
+  padding: 20px;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+#MENU_2{color: coral;}
+.menu_content>p{margin-bottom: 15px;}
+.menu_content.active{
+  right: 0px; transition: 90;
+}
+.menu_content p{
+  font-size: 14px;
+  text-align: start; color: rgb(12, 12, 12);
+  cursor: pointer;
+}
+
+/* INSTRUCTION BOX */
+.instruct_box{
+  position: fixed; z-index: 122; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw; height: 90vh; border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 50px;
+}
+.card_wrap{display: flex; justify-content: space-between; align-items: center; 
+  width: 100%; margin: auto 0; }
+.instruct_box img{
+  width: 330px; height: 330px; margin-bottom: 50px;
+}
+.instruct_box h1{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 50px;
+}
+.instruct_box p{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: 24px;
+}
+.instruct_box>img{
+  position: absolute; top: 4rem; right: 4rem;
+  width: 60px; height: 60px; cursor: pointer;
+}
+#REMOVE_INSTRUCTION{position: absolute; top: 4.5rem; right: 10rem; width: 140px; height: 50px;
+                    border: none; border-radius: 10px;background-color: rgba(255, 255, 255, 0.3); color: #fff;
+                    cursor: pointer; font-size: 1rem; font-weight: 500;
+}
+
+#BRAND_HIDER{width: 230px; height: 50px; position: fixed; z-index: 3; background: #18191b; transform: translate(-50%, -50%);  bottom: -10px; left: 50%;}
+
+@media only screen and (max-width: 740px) {
+  .mport { width:100%; height:110.5vh; bottom: -35px; top: auto; max-width:100vw; }
+  #BRAND_HIDER{width: 200px; height: 40px; position: fixed; z-index: 3; background: rgba(61, 61, 61, 1); transform: translate(-50%, -50%);  bottom: -25px; left: 50%;}
+  #PAGE_VIEW div.header{ padding: 0 1rem; top: 0; left: 0; height: 50px}
+  #PAGE_VIEW div.header h2{font-size: 1.3rem;}
+  #PAGE_VIEW div.header p{font-size: 12px;}
+  #SEARCH_BTN {display: none;  }
+  #MENU_BTN{display: flex; width: 48px; height: 48px;
+            position: fixed; top: 1.2rem; right: 1.3rem;
+            padding: 8px; background: rgba(0, 0, 0, 0.45);
+            border-radius: 50%;}
+	.flex-column-start { display:flex; flex-flow:column wrap; align-items:center; justify-content:flex-start; }
+  #BTN_AREA {
+    display: flex; flex-flow:row nowrap; align-items: center; width: 100%; height: 55px;
+    justify-content: space-evenly;
+    position:fixed; bottom:0; right:0; z-index:100;  background: transparent; padding-top: 10px;
+    border-radius:0px; }
+  #BTN_AREA .datepicker { margin-top: 0; outline: none; font-size: 1.1rem; border: none; background:  rgb(239, 56, 203);
+                    border-radius: 5px; height: 45px; width: 100%; color: #444; color: #fff; }
+
+  #BTN_AREA > div { width:calc(50% - 12px); color:#444; }
+
+  #BTN_AREA #DATE_SELECT_BTN{background:#2469ff; color: #fff; height: 45px; margin-top: 0; width: 100%;}
+  #DATE_PICKER{
+    width:100%;  
+    border: none; text-align: center; color: #fff; outline: none; text-align: center; border-radius: 5px; 
+    height: 45px;
+    padding:5px;
+    background:#2469ff; 
+    font-size: 1rem; }
+      /* INSTRUCTION BOX */
+    .instruct_box{
+      width: 95vw; height: auto; border-radius: 15px;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 20px 0 0 0;
+    }
+    .card_wrap{display: flex; flex-direction: column; align-items: start; 
+      width: 90%; margin: auto 0}
+      .card_wrap >div{display: flex; flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center; margin-bottom: 10px;
+      }
+    .instruct_box img{
+      width: 100px; height: 100px; margin: 0 20px 0 0;
+    }
+    .instruct_box h1{
+      font-size: 1.5rem;
+      margin: 10px 0 30px 0;
+    }
+    .instruct_box p{
+      margin-bottom: 0;
+      font-size: 17px;
+      text-align: start;
+    }
+    .card_wrap>div:nth-child(1)>p{width: 170px;}
+    .card_wrap>div:nth-child(2)>p{width: 190px;}
+    .card_wrap>div:nth-child(3)>p{width: 190px;}
+    .instruct_box>img{
+      position: absolute; top: 1.5rem; right: 0;
+      width: 40px; height: 40px; 
+    }
+    #REMOVE_INSTRUCTION{
+      top: 70px; right: 10px; font-size: 14px; width: 120px; height: 40px;
+    }
+
+    #INPUT_BOX{width: 370px; height: 450px; padding: 25px 10px}
+    .input_wrap{flex-direction: column; margin: 10px 0;}
+    #INPUT_BOX h4{width: 93%; font-size: 18px; text-align: center; margin: 0 auto}
+    #EMAIL_INPUT, #PHONE_INPUT{width: 320px;}
+    .input_wrap>div{height: 60px;}
+    .check-box{height: 30px;}
+    #INPUT_BOX button{ width: 150px;}
+    #INPUT_BOX h5{font-size: 15px; margin-top: 50px;}
+    .check-free{margin-right: 8px;}
+}

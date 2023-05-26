@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-231289544-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-231289544-1');
+</script>
+	<meta charset="UTF-8">
+  <link rel="icon" href="/resource/images/favicon.ico" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="100%개발자들이 마케팅하는 회사. 3D웹 특허기술로 홈페이지를 제작하고, AI콘텐츠 마케팅으로 자동 매출을 만듭니다. 3D하드웨어+AI소프트웨어를 연구합니다." />
+	
+	<!-- SEO -->
+	<meta name="keywords" content="아트불 청담, MEVER, 메버, STO">
+	<meta name="description" content="아트불 청담, MEVER, 메버, STO, STO발행사,조각투자,토큰증권,3D홈페이지제작,3D교육,지식재산STO특허">
+	<meta name="author" content="meVer">
+	<meta name="type" content="website">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://mever.me/art1">
+	<meta property="og:title" content="메버(meVer)">
+	<meta property="og:description" content="3D홈페이지 AI마케팅 개발사.">
+	<meta property="og:image" content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbRcujW%2FbtshiEZ4Kp2%2FtgGINAQnKhDJHxoBcH6N20%2Fimg.png">
+	<meta property="og:keywords" content="MEVER,메버,STO,STO발행,STO투자,조각투자,토큰증권,STO관련주,3D홈페이지제작,3D교육,3D학원,메타버스">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QB9RGWH03"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-7QB9RGWH03');</script>
+
+	<!-- user-scalable=0 -->
+  <title>메버(MEVER)-청담갤러리1</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+	<!-- jQuery -->	
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- axios -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	
+	<!-- scroll -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js" integrity="sha512-zMfrMAZYAlNClPKjN+JMuslK/B6sPM09BGvrWlW+cymmPmsUT1xJF3P4kxI3lOh9zypakSgWaTpY6vDJY/3Dig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/1971fd645a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- underscore -->
+	<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.3/underscore-umd-min.js"></script>
+
+	<!-- moment.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/ko.min.js" integrity="sha512-3kMAxw/DoCOkS6yQGfQsRY1FWknTEzdiz8DOwWoqf+eGRN45AmjS2Lggql50nCe9Q6m5su5dDZylflBY2YjABQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- datapicker -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery.ui.datepicker-ko.min.js"></script>
+  <!-- toss -->
+	<script src="https://js.tosspayments.com/v1"></script>
+
+	<!-- 웹폰트-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+	
+  <!-- CSS  -->
+	<link rel="stylesheet" href="resource/css/reset.css">
+	<link rel="stylesheet" href="resource/css/ui_kit.css">
+	<link rel="stylesheet" href="resource/css/index.css">
+</head>
+<body class='fixed w-screen h-full text-white' oncontextmenu='return false'>
+  <div id = "MUSIC_BOX">
+    <audio id="audioPlayer" src="./resource/music/dreams.mp3" loop></audio>
+    <div class="music-controls">
+      <button class="music-button" onclick="toggleAudio()"></button>
+      <!-- <input type="range" min="0" max="1" step="0.1" value="1" onchange="changeVolume(this.value)" ontouchend="changeVolume(this.value)" onmouseup="changeVolume(this.value)"> -->
+    </div>
+  </div>
+
+  
+  <!-- EMAIL PASSWORD INPUT PAGE -->
+<div id="CONTROL_BOX" class="control-box"></div>
+<div id="INPUT_BOX">
+  <h4>무료 이용시간이 지났습니다.
+    계속해서 3D홈페이지 체험을 원하시면,
+    아래 간단한 정보를 입력해 주세요.</h4>
+  <div class="input_wrap">
+    <div>
+      <input id="EMAIL_INPUT" type="email" autocomplete="off" placeholder="이메일 (예)sm@mever.me">
+      <p id="EMAIL_ALERT">입력한 이메일 주소 확인해 주세요!</p>
+    </div>
+    <div>
+      <input id="PHONE_INPUT" type="tel" autocomplete="off" placeholder="핸드폰번호 (예)01075521110">
+      <p id="PHONE_ALERT">입력한 전화번호 확인해 주세요!</p>
+    </div>
+    <div>
+      <div class="check-box" id="CHECK_BOX">
+        <div class="check-free">
+          <img id="CHECK_SIGN" class="check-sign" src="./resource/images/checkbox.svg" alt="check">  
+        </div>
+        <div>개인정보활용 동의</div>
+      </div>
+      <p id="CHECK_ALERT">동의해 주세요!</p>
+    </div>
+    <div><button id="INPUT_BTN">전송</button></div>
+  </div>
+    <button id="INPUT_LOGIN_BTN">직접 로그인하기</button>
+  <h5>”무제한 무료로 이용이 가능합니다“</h5>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="LOGIN_PAGE" style="display: none">
+  <div>
+    <article>이메일 주소 :</article>
+    <input id="EMAIL_INPUT_LOGIN" type="email" autocomplete="off" placeholder="이메일 (예)sm@mever.me">
+    <p id="EMAIL_ALERT_LOGIN">입력한 이메일 주소 확인해 주세요!</p>
+  </div>
+  <div>
+    <article>전화번호 :</article>
+    <input id="PHONE_INPUT_LOGIN" type="tel" autocomplete="off" placeholder="핸드폰번호 (예)01075521110">
+    <p id="PHONE_ALERT_LOGIN">입력한 전화번호 확인해 주세요!</p>
+  </div>
+  <button id="LOGIN_BTN">로그인</button>
+</div>
+
+
+<!-- IMAGE PAYMENT PAGE -->
+<div id="PAY_WINDOW" style="display: none;">
+
+  <img id="CLOSE" src="./resource//images/close-icon.svg" alt="close icon">
+  <p>상품명 : <span id="NAME"></span></p>
+  <p style="display: none">상품가격 : <span id="PRICE"></span> </span> 원</p>
+  <p>상품가격 :  <span id="PRICE_SHOW"></span> 원</p>
+  <button id="BUY" >작품 후원</button>
+  <button class=" mainsell">작품 구매</button>
+  <button class=" sell buy" value=1000000 >1점당 100만원</button>
+  <button id="rent" >작품 대여</button>
+  <button class="rent" value=100000 >1달에 10만원</button>
+</div>
+
+<!-- 버튼모음 -->
+<div id="BTN_AREA" >
+  <div>
+    <div class="data_wrap"> </div>
+    <button id="DATE_SELECT_BTN">날짜 선택</button>
+    <input type="datetime-local" id="DATE_PICKER" value="2023-05-30 00:00"   min="2023-05-01" max="2024-12-31">
+  </div>
+  <div>
+    <button  id="DATE_SUBMIT" class="datepicker">방문 예약</button>
+  </div>
+</div>
+
+<!-- BRAND HEADER -->
+<div id="BRAND_HIDER"></div>
+
+<!-- PPT용 캔버스 -->
+<canvas id="CANVAS"></canvas>
+
+<!-- 페이지뷰 -->
+<div id="PAGE_VIEW">
+  <div class="loading-hider flex-row-center">
+  </div>
+  <div class="header">
+    <div class="text-box flex-row-center">
+      <h2><span class="effect-color">블루칩</span> 작가와의 <span style="color: rgb(239, 56, 203)">로맨스</span></h2>
+      <p >- 청담 아트불 갤러리 1부 - </p>
+    </div>
+    <!-- MENU BUTTON -->
+  <div class="menu_wrap">
+    <div class="menu-btn">
+      <div class="menu-btn_burger"></div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">SUPPORTED BY <img src="resource/images/m_logo.png" alt=""></div>
+  <iframe id="myFrame" class="mport" src='https://my.matterport.com/show/?play=1&share=0&wh=0&m=8VDqLQx3Yi4' frameborder='0' ></iframe>
+</div>
+<div class="menu_content" id="MENU_CONTENT" >
+  <p id="LOGIN">로그인</p>
+  <p id="LOGOUT">로그 아웃</p>
+  <p id="MENU_1">메버 홈페이지</p>
+  <p id="MENU_2">청담 아트불1부(단체전)</p>
+  <p id="MENU_3">청담 아트불2부(단체전)</p>
+  <p id="MENU_4">남산 갤러리(김미영 작가)</p>
+  <p id="MENU_5">선릉 카페(대단한 커피)</p>
+  <p id="MENU_6">강남지인병원</p>
+  <p id="MENU_7">삼익영농</p>
+  <p id="MENU_8">메버사무실</p>
+</div>
+
+<!-- INSTRUCTION BOX -->
+<div style="display: none" id="INSTRUCTION_BOX" class="instruct_box">
+  <h1>사용 방법</h1>
+  <img id="INSTRUCT_CLOSE" src="./resource/images/close-icon.svg" alt="close icon">
+  <button id="REMOVE_INSTRUCTION">다시는 보지 않기</button>
+  <div class="card_wrap">
+    <div>
+      <p>1번 클릭 : 클릭 장소로 이동</p>
+      <img src="./resource/images/direct.jpg" alt="direct">
+    </div>
+    <div>
+      <p>2번 클릭 : 클릭 장소까지 계속 이동</p>
+      <img src="./resource/images/click.jpg" alt="click">
+    </div>
+    <div>
+      <p>좌우 드래그 : 보이는 시선 이동</p>
+      <img src="./resource/images/left-right.jpg" alt="left-right">
+    </div>
+    <div>
+      <p>줌아웃 : 가까이 보기</p>
+      <img src="./resource/images/zoom out.jpg" alt="zoom out">
+    </div>
+    <div>
+      <p>줌인 : 멀리서 보기 </p>
+      <img src="./resource/images/zoom in.jpg" alt="zoom in">
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- SCRIPT CODES START : -->
+
+<script>
+
+ // Catching data from matter port
+
+  $(function(){
+  setTimeout(() => { $(".loading-hider").fadeOut(); },3000);
+  
+  var para = document.location.href.split("?");
+  if(opener){
+    opener.parent.test(para);
+    console.log('para :',para);
+    setTimeout(()=>{window.close()},5);
+  }
+  
+  let h = window.innerHeight;
+  let w = window.innerWidth;
+
+  console.log("hh wwzzzzzzzzzzzzzzzzzzzzzzzzzz",h,w);
+  $('body, html').css({width:w, height:h});
+});
+
+function test(item){
+		let info = item[1].split('+');
+    let payShow =info[1]
+		$("#PAY_WINDOW").fadeIn();
+		$("#NAME").text(info[0]);
+		$("#PRICE").text(payShow);
+		$("#PRICE_SHOW").text(payShow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+	}
+
+// BRAND HIDING 3 SECONDS:
+$(function(){setTimeout(()=>{$('#BRAND_HIDER').fadeOut()}, 5000)})
+
+// FIRST LOGIN PAGE SCRIPTS:
+
+$(function(){
+  if(localStorage.getItem('mainEmail')===null){
+    $('#LOGOUT').hide()
+    $('#LOGIN').show()
+  }else{
+    $('#LOGOUT').show()
+    $('#LOGIN').hide()
+  }
+})
+$(document).ready(function() {
+  $('#INPUT_LOGIN_BTN').click(function(){
+    $('#LOGIN_PAGE').fadeIn()
+    $('#INPUT_BOX').hide()
+    $('#EMAIL_INPUT_LOGIN').val('')
+    $('#PHONE_INPUT_LOGIN').val('')
+  })
+  $('#LOGIN').click(function(){
+    $('#LOGIN_PAGE').fadeIn()
+    $('.menu_content').removeClass('active')
+    $('.menu-btn').removeClass('open');
+      menuOpen = false;
+  })
+  $('#LOGOUT').click(function(){
+    $('#INPUT_BOX').show()
+    $('#CONTROL_BOX').show()
+    $('#LOGOUT').hide()
+    $('#LOGIN').show()
+    localStorage.clear()
+    $('#EMAIL_INPUT').val('')
+    $('#PHONE_INPUT').val('')
+    $('.menu_content').removeClass('active')
+    $('.menu-btn').removeClass('open');
+      menuOpen = false;
+      isChecked = false
+  })
+  let isChecked = false
+  $('#CHECK_BOX').click(function() {
+    $('#CHECK_SIGN').toggle();
+    isChecked = !isChecked
+    if(isChecked === true){$('#CHECK_ALERT').hide()}
+  });
+  // INPUT BUTTON CLICK
+  $('#INPUT_BTN').click(function(){
+    let email = $('#EMAIL_INPUT').val()
+    let phone = $('#PHONE_INPUT').val()
+    let data = {email, phone}
+    if($('#EMAIL_INPUT').val().includes('@', '.')
+    && $('#EMAIL_INPUT').val().length > 4 && isChecked === true
+    && $('#PHONE_INPUT').val().length > 7
+    && /[a-zA-Z]/.test($('#PHONE_INPUT').val()) === false){
+        $('#CONTROL_BOX').fadeOut()
+        $('#LOGOUT').show()
+        $('#LOGIN').hide()
+        fetch('https://api.mever.me:8080/insMember', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+      localStorage.setItem('mainEmail', $('#EMAIL_INPUT').val())
+      localStorage.setItem('mainPhone', $('#PHONE_INPUT').val())
+      $("#INPUT_BOX").hide()
+
+    }else{
+      if($('#EMAIL_INPUT').val().length < 5
+      || !$('#EMAIL_INPUT').val().includes('@', '.')){
+        $('#EMAIL_ALERT').show()
+      }
+      if($('#PHONE_INPUT').val().length < 8
+      || /[a-zA-Z]/.test($('#PHONE_INPUT').val()) === true){
+        $('#PHONE_ALERT').show()
+      }
+      if(isChecked === false){$('#CHECK_ALERT').show()}
+    }
+  });
+  $(document).on("focus","#EMAIL_INPUT",function(){$('#EMAIL_ALERT').hide()})
+  $(document).on("focus","#PHONE_INPUT",function(){$('#PHONE_ALERT').hide()})
+});
+
+// LOGIN BUTTON CLICK
+$('#LOGIN_BTN').click(function(){
+    let email = $('#EMAIL_INPUT_LOGIN').val()
+    let phone = $('#PHONE_INPUT_LOGIN').val()
+    let data = {email, phone}
+    if($('#EMAIL_INPUT_LOGIN').val().includes('@', '.')
+    && $('#EMAIL_INPUT_LOGIN').val().length > 4
+    && $('#PHONE_INPUT_LOGIN').val().length > 7
+    && /[a-zA-Z]/.test($('#PHONE_INPUT_LOGIN').val()) === false){
+        $('#CONTROL_BOX').fadeOut()
+        $('#LOGOUT').show()
+        $('#LOGIN').hide()
+        fetch('https://api.mever.me:8080/insMember', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+      localStorage.setItem('mainEmail', $('#EMAIL_INPUT_LOGIN').val())
+      localStorage.setItem('mainPhone', $('#PHONE_INPUT_LOGIN').val())
+      $("#LOGIN_PAGE").fadeOut()
+
+    }else{
+      if($('#EMAIL_INPUT_LOGIN').val().length < 5
+      || !$('#EMAIL_INPUT_LOGIN').val().includes('@', '.')){
+        $('#EMAIL_ALERT_LOGIN').show()
+      }
+      if($('#PHONE_INPUT_LOGIN').val().length < 8
+      || /[a-zA-Z]/.test($('#PHONE_INPUT_LOGIN').val()) === true){
+        $('#PHONE_ALERT_LOGIN').show()
+      }
+    }
+  });
+  $(document).on("focus","#EMAIL_INPUT_LOGIN",function(){$('#EMAIL_ALERT_LOGIN').hide()})
+  $(document).on("focus","#PHONE_INPUT_LOGIN",function(){$('#PHONE_ALERT_LOGIN').hide()})
+
+// CLOSING 사용 방법 PAGE
+$(function(){
+  if(localStorage.getItem('instructBox') === null){
+    setTimeout(()=>{$("#INSTRUCTION_BOX").fadeIn()}, 7000)
+  }
+})
+$(document).ready(function() {
+  $("#REMOVE_INSTRUCTION").click(function(){
+    $("#INSTRUCTION_BOX").fadeOut() 
+    localStorage.setItem('instructBox', 'hide')
+    if(localStorage.getItem('mainEmail')===null){
+      setTimeout(() => {
+        $('#INPUT_BOX').show()
+        $('#CONTROL_BOX').show()
+      }, 15000);
+    }
+  })
+  $("#INSTRUCT_CLOSE").click(function(){
+    $("#INSTRUCTION_BOX").fadeOut() 
+    if(localStorage.getItem('mainEmail')===null){
+      setTimeout(() => {
+        $('#INPUT_BOX').show()
+        $('#CONTROL_BOX').show()
+      }, 15000);
+    }
+  })
+})
+
+// MENU BUTTON FUNCTION
+$(document).ready(function() {
+  const menuBtn = $('.menu-btn');
+  const menuContent = $('.menu_content')
+  let menuOpen = false;
+
+  menuBtn.on('click', function() {
+    if (!menuOpen) {
+      menuBtn.addClass('open');
+      menuContent.addClass('active')
+      menuOpen = true;
+    } else {
+      menuBtn.removeClass('open');
+      menuContent.removeClass('active')
+      menuOpen = false;
+    }
+  });
+  $("#MENU_1").click(function(){
+    window.location.href = "https://mever.me/";
+  })
+  // $("#MENU_2").click(function(){
+  //   window.location.href = "https://mever.me/art1";
+  // })
+  $("#MENU_3").click(function(){
+    window.location.href = "https://mever.me/art2";
+  })
+  $("#MENU_4").click(function(){
+    window.location.href = "https://mever.me/art3";
+  })
+  $("#MENU_5").click(function(){
+    window.location.href = "https://mever.me/cafe1";
+  })
+  $("#MENU_6").click(function(){
+    window.location.href = "https://mever.me/hospital1";
+  })
+  $("#MENU_7").click(function(){
+    window.location.href = "https://mever.me/office1";
+  })
+  $("#MENU_8").click(function(){
+    window.location.href = "https://mever.me/academy1";
+  })
+});
+
+  
+  // closing IMG PAYMENT window
+  $("#CLOSE").click(function(){
+    $("#PAY_WINDOW").hide();
+  })
+    // closing INPUT window
+  //   $("#CLOSE_INPUT").click(function(){
+  //   $("#INPUT_BOX").hide();
+  // })
+// DATE SELECT BUTTON FUNCTION: 
+$(document).ready(function() {
+  $('#DATE_SELECT_BTN').click(function(){
+    $('#DATE_SELECT_BTN').hide()
+    $('#DATE_PICKER').show()
+    $('#DATE_PICKER').focus()
+  })
+
+})
+// DATE SUBMIT FUNCTION:
+    $("#DATE_SUBMIT").click(function(){
+      let email = localStorage.getItem('mainEmail')
+      let appointment = $("#DATE_PICKER").val();
+      let data = { email, appointment };
+    console.log($("#DATE_PICKER").val());
+    alert( '예약이 완료 되었습니다.');
+    fetch('https://api.mever.me:8080/insMember', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+  })
+
+
+let canvasView = 0;
+
+var CANVAS = document.getElementById("CANVAS");
+var ctx = CANVAS.getContext("2d");
+  
+// Fill Window Width and Height
+CANVAS.width = window.innerWidth;
+CANVAS.height = window.innerHeight;
+
+// Set Background Color
+ctx.fillRect(0,0,CANVAS.width,CANVAS.height);
+
+$(function(){
+  
+
+  let Email="";
+  let Phone="";
+  let amount=0; 
+
+  //캔버스 버튼 클릭
+  $("#BTN_CANVAS").click(function(){
+    $("#BTN_CLEAR").show();
+    $("#BTN_CANVAS_OFF").show();
+    $("#BTN_CANVAS").hide();
+    $("#CANVAS").css({zIndex:9});
+    $("#COLOR_SET").show();
+    $("#COLOR").show();
+    manageCanvas();
+    canvasView == 0  ? clearCanvas() : "";
+  });
+    // 작품 구매 function
+  $(document).on("click",".mainsell",function(){
+    // if(localStorage.getItem('mainEmail')){
+      $(".sell").show();
+      $(".mainsell").hide();
+      $("#rent").show();
+      $("#rental").show();
+      $(".rent").hide();
+      $(".rental").hide();
+    // }else{
+    //   $("#INPUT_BOX").show()
+    // }
+    
+  });
+  // 작품 대여 function
+  $(document).on("click","#rent",function(){
+    // if(localStorage.getItem('mainEmail')){
+    $('#rent').hide();
+    $(".sell").hide();
+    $(".mainsell").show();
+    $(".rent").show();
+  // }else{
+  //     $("#INPUT_BOX").show()
+  //   }
+  });
+    // 작품 대여 function
+    $(document).on("click","#rental",function(){
+    $('#rental').hide();
+    $(".sell").hide();
+    $(".mainsell").show();
+    $(".rental").show();
+
+  });
+  
+  $(document).on("click",".sell",function(){
+    // if(localStorage.getItem('mainEmail')){
+      amount=$(this).val();
+      console.log(amount);
+      api_toss(amount);
+    // }else{
+    //   $("#INPUT_BOX").show()
+
+    // }
+  });
+  // CLICK ITEM BUY
+  // $(document).on("click","#BUY",function(){console.log($("#PRICE").text())})
+  $(document).on("click","#BUY",function(){
+    // if(localStorage.getItem('mainEmail')){
+      amount=$("#PRICE").text()
+      console.log(amount);
+      api_toss(amount);
+      $("#P_WINDOW").hide();
+    // }else{
+    //   $("#INPUT_BOX").show()
+    // }
+  });
+  
+  $(document).on("click",".rent",function(){
+    amount=$(this).val();    
+    console.log(amount);
+    api_toss_period(amount);
+  });
+  $(document).on("click",".rental",function(){
+    amount=$(this).val();
+    console.log(amount);
+    api_toss_period(amount);
+  });
+
+  $("#COLOR").click(function(){ 
+    let color = $("#COLOR_SET").val();
+    canvasColorSet(color);
+  });
+  $("#COLOR_SET").click(function(){});
+
+  //초기화 버튼 클릭
+  $("#BTN_CLEAR").click(function(){clearCanvas();});
+
+  //캔버스 종료
+  $("#BTN_CANVAS_OFF").click(function(){
+    $("#CANVAS").css({zIndex:-1});
+    $("#BTN_CLEAR").hide();
+    $("#BTN_CANVAS_OFF").hide();
+    $("#BTN_CANVAS").show();
+    $("#COLOR").hide();
+    $("#COLOR_SET").hide();
+  });
+
+  $(".footer").click(function(){window.open('https://mever.me')});
+
+  $("#BTN_CHANGE_VIEW").click(function(){ toggleFullScreen(); });
+});
+
+
+//화면 토글
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+      $("#BTN_CHANGE_VIEW").text("일반화면")
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    $("#BTN_CHANGE_VIEW").text("풀스크린")
+    }
+  }
+}
+
+//캔버스 초기화
+function clearCanvas()
+{
+  canvasView = 1;
+  // canvas
+  var canvas = document.getElementById('CANVAS');
+  // context
+  var ctx = canvas.getContext('2d');
+
+  // 픽셀 정리
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // 컨텍스트 리셋
+  ctx.beginPath();
+}
+
+function canvasColorSet(color)
+{
+    // Mouse Event Handlers
+    if(CANVAS){
+    var isDown = false;
+    var canvasX, canvasY;
+    ctx.lineWidth = 3;				
+    ctx.strokeStyle = `${color}`;
+
+    $(CANVAS)
+    .mousedown(function(e){
+      isDown = true;
+      ctx.beginPath();
+      canvasX = e.pageX - CANVAS.offsetLeft;
+      canvasY = e.pageY - CANVAS.offsetTop;
+      ctx.moveTo(canvasX, canvasY);
+    })
+    .mousemove(function(e){
+      if(isDown !== false) {
+        canvasX = e.pageX - CANVAS.offsetLeft;
+        canvasY = e.pageY - CANVAS.offsetTop;
+        ctx.lineTo(canvasX, canvasY);
+        ctx.stroke();
+      }
+    })
+    .mouseup(function(e){
+      isDown = false;
+      ctx.closePath();
+    });
+  }
+  
+    
+  // Touch Events Handlers
+  draw = {
+    started: false,
+    start: function(evt) {
+
+      ctx.beginPath();
+      ctx.moveTo(
+        evt.touches[0].pageX,
+        evt.touches[0].pageY
+      );
+
+      this.started = true;
+
+    },
+    move: function(evt) {
+
+      if (this.started) {
+        ctx.lineTo(
+          evt.touches[0].pageX,
+          evt.touches[0].pageY
+        );
+
+        ctx.strokeStyle = `${color}`;
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      }
+
+    },
+    end: function(evt) {
+      this.started = false;
+    }
+  };
+  
+  // Touch Events
+  CANVAS.addEventListener('touchstart', draw.start, false);
+  CANVAS.addEventListener('touchend', draw.end, false);
+  CANVAS.addEventListener('touchmove', draw.move, false);
+
+}
+
+//캔버스 설정
+function manageCanvas()
+{
+  // Mouse Event Handlers
+  if(CANVAS){
+    var isDown = false;
+    var canvasX, canvasY;
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round" // butt, square, round
+    ctx.lineJoin = 'round'; // mitter, round, bevel
+    ctx.strokeStyle = "red";
+    
+    $(CANVAS)
+    .mousedown(function(e){
+      isDown = true;
+      ctx.beginPath();
+      canvasX = e.pageX - CANVAS.offsetLeft;
+      canvasY = e.pageY - CANVAS.offsetTop;
+      ctx.moveTo(canvasX, canvasY);
+    })
+    .mousemove(function(e){
+      if(isDown !== false) {
+        canvasX = e.pageX - CANVAS.offsetLeft;
+        canvasY = e.pageY - CANVAS.offsetTop;
+        ctx.lineTo(canvasX, canvasY);
+        ctx.stroke();
+      }
+    })
+    .mouseup(function(e){
+      isDown = false;
+      ctx.closePath();
+    });
+  }
+  
+  // Touch Events Handlers
+  draw = {
+    started: false,
+    start: function(evt) {
+
+      ctx.beginPath();
+      ctx.moveTo(
+        evt.touches[0].pageX,
+        evt.touches[0].pageY
+      );
+
+      this.started = true;
+
+    },
+    move: function(evt) {
+
+      if (this.started) {
+        ctx.lineTo(
+          evt.touches[0].pageX,
+          evt.touches[0].pageY
+        );
+
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      }
+
+    },
+    end: function(evt) {
+      this.started = false;
+    }
+  };
+  
+  // Touch Events
+  CANVAS.addEventListener('touchstart', draw.start, false);
+  CANVAS.addEventListener('touchend', draw.end, false);
+  CANVAS.addEventListener('touchmove', draw.move, false);
+  
+  // Disable Page Move
+  document.body.addEventListener('touchmove',function(evt){
+    evt.preventDefault();
+  },false);
+}
+
+// PAYMENT FUNCTION WITHOUT PERIOD
+function api_toss(pay){
+  var clientKey = 'test_ck_OyL0qZ4G1VOmmAG4JOP8oWb2MQYg';
+  var tossPayments = TossPayments(clientKey);
+  
+  $.ajax({
+      type : "post",
+      url : "https://api.mever.me:8080/payment",
+      contentType: 'application/json',
+      data:JSON.stringify(
+    {
+        payType:'카드',
+        totalAmount: pay,
+        orderName: '상품',
+        email: localStorage.getItem('mainEmail')
+      }),
+      success : function (res) {
+        tossPayments.requestPayment('CARD', {
+          amount: res.totalAmount,
+          orderId: res.orderId,
+          orderName:res.orderName,
+          name: res.name,
+          email: res.email,
+          successUrl: 'https://api.mever.me:8080/success?url=https://mever.me/art_gallery/',
+          failUrl: 'https://api.mever.me:8080/fail',
+        })
+      },
+      error : function (status) {
+        alert(status + "error!");
+      }
+    });
+}
+// PAYMENT FUNCTION WITH PERIOD
+function api_toss_period(pay){
+  var clientKey = 'test_ck_OyL0qZ4G1VOmmAG4JOP8oWb2MQYg';
+  var tossPayments = TossPayments(clientKey);
+  
+  $.ajax({
+      type : "post",
+      url : "https://api.mever.me:8080/autoPayment?url=https://mever.me/art_gallery/",
+      contentType: 'application/json',
+      data:JSON.stringify(
+    {
+        payType:'카드',
+        totalAmount: pay,
+        period: 'month',
+        orderName: '상품:정기구독',
+        email: localStorage.getItem('mainEmail')
+      }),
+      success : function (res) {
+        tossPayments.requestBillingAuth('CARD', {
+          customerKey: res.customerKey,
+          authKey: res.authKey,
+          amount: res.amount,
+          orderId: res.orderId,
+          orderName:res.orderName,
+          name: res.name,
+          email: res.email,
+          successUrl: 'https://api.mever.me:8080/autoSuccess',
+          failUrl: 'https://api.mever.me:8080/fail',
+        })
+      },
+      error : function (status) {
+        alert(status + "error!");
+      }
+    });
+}
+
+// MUSIC FUNCTION
+var audio = document.getElementById("audioPlayer");
+  
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+    
+    function changeVolume(volume) {
+      audio.volume = volume;
+    }
+    
+    window.onload = function() {
+      audio.play();
+    };
+</script>
+</body>
+</html>
